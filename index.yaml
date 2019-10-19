@@ -3,7 +3,7 @@ entries:
   alb-ingress-controller:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-19T21:18:40.34611552Z"
+    created: "2019-10-19T22:12:07.258629945Z"
     description: A Helm chart for Kubernetes
     digest: 10659098782d5c33560bacdb48fb6663467101d8f0675287dc8d878015229ec2
     name: alb-ingress-controller
@@ -13,20 +13,20 @@ entries:
   mynode:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-19T21:18:40.346911197Z"
+    created: "2019-10-19T22:12:07.259330066Z"
     description: A Helm chart for Kubernetes
-    digest: 14d18789c7d10194d9528045b8dbf1400a2708c6a64735ff1eae9d5f1bebcb97
+    digest: 6bf11d0446be08966ccb064cd0c01187bb0b2a92551979394093fa2efe7f3b52
     name: mynode
     urls:
     - mynode-0.1.7.tgz
     version: 0.1.7
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-19T21:18:40.346643137Z"
+    created: "2019-10-19T22:12:07.25899708Z"
     description: A Helm chart for Kubernetes
     digest: 26ca23b181161cb4e2426d7f8a9b4407f4c43a8c2188cc931017713b23cbc0a3
     name: mynode
     urls:
     - mynode-0.1.6.tgz
     version: 0.1.6
-generated: "2019-10-19T21:18:40.345291667Z"
+generated: "2019-10-19T22:12:07.258004535Z"

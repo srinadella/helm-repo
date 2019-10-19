@@ -3,6 +3,7 @@ pipeline {
     registry = "cnadella/docker-test"
     registryCredential = 'DockerHub'
     dockerImage = ''
+    install_failed = false
   }
   agent any
   stages {
@@ -51,14 +52,27 @@ pipeline {
     stage('List Local Helm Repo') {
       steps{
         script {
+            
           sh "/usr/local/bin/helm search helm-charts"
         }
       }
     }
-    stage('Install Heml Chart') {
-      steps{
-        sh "/usr/local/bin/helm update --name mynode helm-charts/mynode"
-      }
+    try{        
+        stage('Install Heml Chart') {
+            steps{
+                sh "/usr/local/bin/helm install --name mynode helm-charts/mynode"
+            }
+        }
+    } catch (e) {
+        install_failed = true;
+        echo e.toString()
+    }
+    if (install_failed) {
+        stage('Upgrade Heml Chart') {
+        steps{
+            sh "/usr/local/bin/helm upgrade --name mynode helm-charts/mynode"
+        }
+        }
     }
   }
 }
